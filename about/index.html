@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Java vous raconter ...</title>
+  <title>bonjour - Java vous raconter ...</title>
   <meta name="author" content="Yann Bacquet">
 
   
-  <meta name="description" content="github Pour heberger un blog sur GitHub: il faut commencer par se créer un repo dédié avec comme nom , ben ton nom en fait ;)
-c&#8217;est expliqué la &hellip;">
+  <meta name="description" content="bonjour 25/06/14 Bonjour a vous cher(e) lecteur, Developpeur depuis 15 ans déja; J‘ai commencé par me faire les canines sur des technos c++ et base &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ c&#8217;est expliqué la &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yannbacquet.github.io/">
+  <link rel="canonical" href="http://yannbacquet.github.io/about/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -64,19 +63,62 @@ c&#8217;est expliqué la &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article role="article">
   
-  
-  
-    <article>
-      
   <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/mes-debuts-avec-octopress/">Installation d&#8217;octopress</a></h1>
-    
-    
+    <h1 class="entry-title">bonjour</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T10:18:00+02:00" pubdate data-updated="true">25/06/14</time></p>
+  </header>
+  
+  <p>Bonjour a vous cher(e) lecteur,</p>
+
+<p>Developpeur depuis 15 ans déja; J‘ai commencé par me faire les canines sur des technos c++ et base de données pendant 6 ans en ssii.</p>
+
+<p>Je suis ensuite entré chez Reuters (logiciels de finance) pendant pres de 6ans pour bosser principalement sur une appli web java.(spring hibernate jaxb cxf)</p>
+
+<p>Je travail actuellement au BureauVeritas sur une appli java de calcul de fiabilite pour plateforme pétrolière.</p>
+
+<p>Sinon pour me detendre je vais a Devoxx bien sure :)
+ou je bidouille sur des technos Scala  java8 Akka et web (*js, spring )  <br/>
+quel comformiste celui la :):)</p>
+
+<p>Ce blog sera donc l&#8217;occasion de partager sur ces technos.</p>
+
+<h2>Technos pour ce blog</h2>
+
+<hr />
+
+<p>J&#8217;hesitais entre Blogger que je connais déja, ou autre chose.</p>
+
+<p>En regardant plusieurs blogs (<a href="http://blog.jetoile.fr/2014/03/changement-de-look-et-dhebergeur.html" title="jetoile">jetoile</a>, ou <a href="http://lhuet.github.io/blog/2013/12/yet-another-blog.html" title="lhuet">lhuet</a>)
+mon choix s&#8217;est porté sur <a href="https://pages.github.com/" title="GitHub">GitHub</a> pour l&#8217;hébergement gratuit et
+sur <a href="http://octopress.org/">octopress</a> pour la génération.</p>
+
+<p>l&#8217;interet est de : <br/>
+&ndash; générer un site en local <br/>
+&ndash; ecrire des pages en markdown directement <br/>
+&ndash; avoir un rendu direct de son site en local (une modif de fichier impacte instantannément le site)</p>
+
+<p>Sinon, je ne connaissais pas grand chose a Ruby mais ca n&#8217;a pas été très compliqué a installer.</p>
+
+  
+    <footer>
       <p class="meta">
         
+        
 
 
 
@@ -88,70 +130,30 @@ c&#8217;est expliqué la &hellip;">
   
 
 
-<time datetime="2014-06-27T10:07:51+02:00" pubdate data-updated="true">27/06/14</time>
+<time datetime="2014-06-25T10:18:00+02:00" pubdate data-updated="true">25/06/14</time>
         
       </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>github</h2>
-
-<p>Pour heberger un blog sur GitHub: <br/>
-il faut commencer par se créer un repo dédié avec comme nom , ben ton nom en fait ;)
-c&#8217;est expliqué <a href="https://pages.github.com/">la</a><br/>
-Si tu penses utiliser octopress, crée juste le repository (tache 1 uniquement)  <br/>
-Si tu n&#8217;es pas un expert github tu peux réviser un peu <a href="http://fr.openclassrooms.com/informatique/cours/gerez-vos-codes-source-avec-git">ici</a>. (tu n&#8217;auras besoin que des commandes de base)</p>
-
-<h2>octopress</h2>
-
-<p>le mieux est de suivre  <a href="http://octopress.org/docs/setup/">le setup offciel</a> et en parallèle les explications ci-dessous:</p>
-
-<ul>
-<li>installer Git</li>
-<li>installer Ruby + le dev Kit (si vous êtes sous windows le plus simple est d&#8217;aller directement sur le site de <a href="http://rubyinstaller.org/downloads/">ruby</a> et d&#8217;y installer:  <br/>
-<code>Ruby 1.9.3-p545</code>  (la version 1.9.3 était alors recommandée)<br/>
-puis le devkit associé: <code>DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</code></li>
-</ul>
-
-
-<p>rajouter ensuite a votre Path les variables d&#8217;environnements  <code>...\Rubyxx\bin</code> , <code>...\RubyDevKit\bin</code> et  <code>...\RubyDevKit\mingw\bin</code> <br/>
- (pour ces 2 dernières vous pouvez utiliser <code>RubyDevKit/devkitvars.bat</code>)</p>
-
-<ul>
-<li>installer un blog octopress vide : <a href="http://octopress.org/docs/deploying/github/">(cf octopress)</a> <br/>
-Créez vous un repertoire local qui accueillera votre blog,
-et dans ce repertoire lancez :
-
-<blockquote><p>rake setup_github_pages</p></blockquote></li>
-</ul>
-
-
-<p>cette commande va vous checkouter un blog octopress vide et le faire mapper sur votre repo github</p>
-
-<blockquote><p>rake generate  <br/>
-rake deploy</p></blockquote>
-
-<p>vous permet de générer votre site; puis de le déployer sur github pour enfin obtenir ceci :    <br/>
-<img src="\images\blogVide.png" alt="blog Vide" /></p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yannbacquet.github.io/about/index.html" data-via="" data-counturl="http://yannbacquet.github.io/about/index.html" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
-
-    </article>
+      
+    </footer>
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+</article>
+
 </div>
+
 <aside class="sidebar">
   
     <section>
   <h1>A propos</h1>
-  <p>Yann Bacquet, developpeur Java, mais pas que  <a href="/about" title="GitHub">&#8230;</a>
+  <p>Yann Bacquet, developpeur Java, mais pas que  <a href="/about" title="GitHub">...</a>
 </p>
 </section>
 <section>
@@ -159,7 +161,7 @@ rake deploy</p></blockquote>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/06/mes-debuts-avec-octopress/">Installation d&#8217;octopress</a>
+        <a href="/blog/2014/06/mes-debuts-avec-octopress/">Installation d'octopress</a>
       </li>
     
   </ul>
@@ -167,6 +169,7 @@ rake deploy</p></blockquote>
 
   
 </aside>
+
 
     </div>
   </div>
