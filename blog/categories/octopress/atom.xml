@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: octopress | Java vous raconter ...]]></title>
+  <title><![CDATA[Categorie: octopress | Java vous raconter ...]]></title>
   <link href="http://yannbacquet.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://yannbacquet.github.io/"/>
-  <updated>2014-06-27T15:34:00+02:00</updated>
+  <updated>2014-07-02T14:00:15+02:00</updated>
   <id>http://yannbacquet.github.io/</id>
   <author>
     <name><![CDATA[Yann Bacquet]]></name>
@@ -14,13 +14,59 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Octopress customisation]]></title>
+    <link href="http://yannbacquet.github.io/blog/2014/07/octopress-customisation/"/>
+    <updated>2014-07-02T12:52:27+02:00</updated>
+    <id>http://yannbacquet.github.io/blog/2014/07/octopress-customisation</id>
+    <content type="html"><![CDATA[<h2>Thèmes</h2>
+
+<p>Vous pouvez récupérer des <a href="http://octopressthemes.com">thèmes</a> déja tout fait pour remplacer celui par defaut  <br/>
+Il faudra alors copier le répertoire dans octopress\.themes</p>
+
+<h2>_config.yml</h2>
+
+<p><code>octopress\config.yml</code> est le point d'entré pour customiser votre blog: <br/>
+Vous pouvez commencer par changer <code>title:</code>  <code>subtitle:</code>  <code>author:</code>
+et eventuellement le format de date avec <code>date_format:</code></p>
+
+<!--more-->
+
+
+<p>
+Pour franciser la &ldquo;Category&rdquo;, changez  <code>category_title_prefix:</code>. <br/>
+Passez <code>titlecase:</code> a false Si vous ne voulez pas de majuscule à chaque mots (pour vos titres).</p>
+
+<p>Pour une présentation avec résumés (affichage partiel de chaque post)
+il faudra ajouter dans vos posts <code>&lt;!--more--&gt;</code> <br/>
+et pour fanciser, modifier <code>excerpt_link:</code></p>
+
+<p>Pour customiser la partie droite de votre blog, modifiez
+<code>default_asides:</code> <br/>
+Par exemple vous pouvez vous rajouter une fenêtre &ldquo;About&rdquo; avec <br/>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>default_asides: [ custom/asides/about.html, &hellip;</span></code></pre></td></tr></table></div></figure></notextile></div>
+le about.html à customiser se trouvant sous    <code>octopress\source\_includes\custom\asides\about.html</code></p>
+
+<h2>page de présentation</h2>
+
+<p>je me créé une page about (ca pourrait être toto) <br/>
+<code>rake new_page[about]</code> =>  <code>source\about\index.markdown</code> <br/>
+Si vous voulez ensuite un onglet pointant dessus : <br/>
+allez dans <code>source\_includes\custom\navigation.htm</code> <br/>
+et ajouter :
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;li>&lt;a href="/about">A Propos&lt;/a>&lt;/li></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Installation d'octopress]]></title>
     <link href="http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress/"/>
     <updated>2014-06-27T10:07:51+02:00</updated>
     <id>http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress</id>
     <content type="html"><![CDATA[<h2>github</h2>
 
-<p>Pour heberger un blog sur GitHub: <br/>
+<p>Pour héberger un blog sur GitHub: <br/>
 il faut commencer par se créer un repo dédié avec comme nom , ben ton nom en fait ;)
 c'est expliqué <a href="https://pages.github.com/">la</a><br/>
 Si tu penses utiliser octopress, crée juste le repository (tache 1 uniquement)  <br/>
@@ -29,6 +75,9 @@ Si tu n'es pas un expert github tu peux réviser un peu <a href="http://fr.openc
 <h2>octopress</h2>
 
 <p>le mieux est de suivre  <a href="http://octopress.org/docs/setup/">le setup offciel</a> et en parallèle les explications ci-dessous:</p>
+
+<!--more-->
+
 
 <ul>
 <li>installer Git</li>
@@ -55,7 +104,7 @@ et dans ce repertoire lancez :
 <blockquote><p>rake generate  <br/>
 rake deploy</p></blockquote>
 
-<p>vous permet de générer votre site; puis de le déployer sur github pour enfin obtenir ceci :    <br/>
+<p>vous permet de générer votre site; puis de le déployer sur github pour enfin obtenir ceci : <br/>
 <img src="\images\blogVide.png" alt="blog Vide" /></p>
 ]]></content>
   </entry>

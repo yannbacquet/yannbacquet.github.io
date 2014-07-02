@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Java vous raconter ...</title>
+  <title>Octopress customisation - Java vous raconter ...</title>
   <meta name="author" content="Yann Bacquet">
 
   
-  <meta name="description" content="Thèmes Vous pouvez récupérer des thèmes déja tout fait pour remplacer celui par defaut Il faudra alors copier le répertoire dans octopress&#46;themes &hellip;">
+  <meta name="description" content="octopress tuto">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yannbacquet.github.io/">
+  <link rel="canonical" href="http://yannbacquet.github.io/blog/2014/07/octopress-customisation/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/07/octopress-customisation/">Octopress customisation</a></h1>
+      <h1 class="entry-title">Octopress customisation</h1>
     
     
       <p class="meta">
@@ -101,8 +98,8 @@
     
   </header>
 
-         	
-  <div class="entry-content"><h2>Thèmes</h2>
+
+<div class="entry-content"><h2>Thèmes</h2>
 
 <p>Vous pouvez récupérer des <a href="http://octopressthemes.com">thèmes</a> déja tout fait pour remplacer celui par defaut  <br/>
 Il faudra alors copier le répertoire dans octopress&#46;themes</p>
@@ -113,27 +110,51 @@ Il faudra alors copier le répertoire dans octopress&#46;themes</p>
 Vous pouvez commencer par changer <code>title:</code>  <code>subtitle:</code>  <code>author:</code>
 et eventuellement le format de date avec <code>date_format:</code></p>
 
+<!--more-->
+
+
+<p>
+Pour franciser la &ldquo;Category&rdquo;, changez  <code>category_title_prefix:</code>. <br/>
+Passez <code>titlecase:</code> a false Si vous ne voulez pas de majuscule à chaque mots (pour vos titres).</p>
+
+<p>Pour une présentation avec résumés (affichage partiel de chaque post)
+il faudra ajouter dans vos posts <code>&lt;!--more--&gt;</code> <br/>
+et pour fanciser, modifier <code>excerpt_link:</code></p>
+
+<p>Pour customiser la partie droite de votre blog, modifiez
+<code>default_asides:</code> <br/>
+Par exemple vous pouvez vous rajouter une fenêtre &ldquo;About&rdquo; avec</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>default\_asides: [ custom/asides/about.html, ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p>le about.html à customiser se trouvant sous    <code>octopress\source\_includes\custom\asides\about.html</code></p>
+
+<h2>page de présentation</h2>
+
+<p>je me créé une page about (ca pourrait être toto) <br/>
+<code>rake new_page[about]</code> =>  <code>source\about\index.markdown</code> <br/>
+Si vous voulez ensuite un onglet pointant dessus : <br/>
+allez dans <code>source\_includes\custom\navigation.htm</code> <br/>
+et ajouter :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;li>&lt;a href="/about">A Propos&lt;/a>&lt;/li></span></code></pre></td></tr></table></div></figure>
+
+
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/07/octopress-customisation/">Continuer &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/mes-debuts-avec-octopress/">Installation d&#8217;octopress</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Yann Bacquet</span></span>
+
+      
 
 
 
@@ -145,7 +166,8 @@ et eventuellement le format de date avec <code>date_format:</code></p>
   
 
 
-<time datetime="2014-06-27T10:07:51+02:00" pubdate data-updated="true">27/06/14</time> 
+<time datetime="2014-07-02T12:52:27+02:00" pubdate data-updated="true">02/07/14</time>
+      
 
 <span class="categories">
   
@@ -153,47 +175,34 @@ et eventuellement le format de date avec <code>date_format:</code></p>
   
 </span>
 
- 
-        
-      </p>
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yannbacquet.github.io/blog/2014/07/octopress-customisation/" data-via="ybacquet" data-counturl="http://yannbacquet.github.io/blog/2014/07/octopress-customisation/" >Tweet</a>
+  
+  
+  
+</div>
 
-         	
-  <div class="entry-content"><h2>github</h2>
-
-<p>Pour héberger un blog sur GitHub: <br/>
-il faut commencer par se créer un repo dédié avec comme nom , ben ton nom en fait ;)
-c&#8217;est expliqué <a href="https://pages.github.com/">la</a><br/>
-Si tu penses utiliser octopress, crée juste le repository (tache 1 uniquement)  <br/>
-Si tu n&#8217;es pas un expert github tu peux réviser un peu <a href="http://fr.openclassrooms.com/informatique/cours/gerez-vos-codes-source-avec-git">ici</a>. (tu n&#8217;auras besoin que des commandes de base)</p>
-
-<h2>octopress</h2>
-
-<p>le mieux est de suivre  <a href="http://octopress.org/docs/setup/">le setup offciel</a> et en parallèle les explications ci-dessous:</p>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/06/mes-debuts-avec-octopress/" title="Previous Post: Installation d'octopress">&laquo; Installation d'octopress</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/06/mes-debuts-avec-octopress/">Continuer &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
   <h1>A propos</h1>
-  <p>Yann Bacquet, developpeur Java, mais pas que  <a href="/about" title="GitHub">&#8230;</a>
+  <p>Yann Bacquet, developpeur Java, mais pas que  <a href="/about" title="GitHub">...</a>
 </p>
 </section>
 <section>
@@ -205,7 +214,7 @@ Si tu n&#8217;es pas un expert github tu peux réviser un peu <a href="http://fr
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/mes-debuts-avec-octopress/">Installation d&#8217;octopress</a>
+        <a href="/blog/2014/06/mes-debuts-avec-octopress/">Installation d'octopress</a>
       </li>
     
   </ul>
@@ -213,6 +222,7 @@ Si tu n&#8217;es pas un expert github tu peux réviser un peu <a href="http://fr
 
   
 </aside>
+
 
     </div>
   </div>
