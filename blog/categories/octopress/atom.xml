@@ -4,7 +4,7 @@
   <title><![CDATA[Categorie: octopress | Java vous raconter ...]]></title>
   <link href="http://yannbacquet.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://yannbacquet.github.io/"/>
-  <updated>2014-07-02T14:00:15+02:00</updated>
+  <updated>2014-11-13T13:13:45+01:00</updated>
   <id>http://yannbacquet.github.io/</id>
   <author>
     <name><![CDATA[Yann Bacquet]]></name>
@@ -56,6 +56,30 @@ allez dans <code>source\_includes\custom\navigation.htm</code> <br/>
 et ajouter :
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;li>&lt;a href="/about">A Propos&lt;/a>&lt;/li></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>SEO (search engine optimisation)</h2>
+
+<p>voici d'abord un lien <a href="http://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_de_recherche">wikipedia SEO</a><br/>
+Même si les moteurs de recherche semblent s'apppuyer de moins en moins sur les &lsquo;meta tags&rsquo;; ca ne mange pas de paim de les rajouter.</p>
+
+<p>Pour la <em>Home page</em>: rajouter dans _config.yml les mots clés <code>keywords</code> et <code>description</code> <br/>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>description: #site description
+</span><span class='line'>keywords:    #key1,key2,key3</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Puis pour sa bonne prise en compte : Dans <code>source/_includes/head.html</code>
+apres la ligne <code>&lt;meta name="author" ...</code> changer le code pour description/Keywords
+avec:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{% capture description %}{% if page.url == &ldquo;/index.html&rdquo; %} {{ site.description }}{% elsif page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+</span><span class='line'>  &lt;meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+</span><span class='line'>  {% if page.url == &ldquo;/index.html&rdquo; %}&lt;meta name="keywords" content="{{ site.keywords }}">
+</span><span class='line'>  {% elsif page.keywords %}&lt;meta name="keywords" content="{{ page.keywords }}">{% endif %}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
