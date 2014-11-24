@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Installation d'octopress - Java vous raconter ...</title>
+  <title>Ajout de commentaires avec Disqus - Java vous raconter ...</title>
   <meta name="author" content="Yann Bacquet">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress/">
+  <link rel="canonical" href="http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">Installation d'octopress</h1>
+      <h1 class="entry-title">Ajout de commentaires avec Disqus</h1>
     
     
       <p class="meta">
@@ -83,7 +83,7 @@
   
 
 
-<time datetime="2014-06-27T10:07:51+02:00" pubdate data-updated="true">27/06/14</time>
+<time datetime="2014-11-21T15:44:08+01:00" pubdate data-updated="true">21/11/14</time>
         
 
 <span class="categories">
@@ -99,48 +99,20 @@
   </header>
 
 
-<div class="entry-content"><h2>github</h2>
+<div class="entry-content"><h2>disqus</h2>
 
-<p>Pour héberger un blog sur GitHub: <br/>
-il faut commencer par se créer un repo dédié avec comme nom , ben ton nom en fait ;)
-c&#8217;est expliqué <a href="https://pages.github.com/">la</a><br/>
-Si tu penses utiliser octopress, crée juste le repository (tache 1 uniquement)  <br/>
-Si tu n&#8217;es pas un expert github tu peux réviser un peu <a href="http://fr.openclassrooms.com/informatique/cours/gerez-vos-codes-source-avec-git">ici</a>. (tu n&#8217;auras besoin que des commandes de base)</p>
+<p>Afin de permettre l&#8217;ajout de commentaires par vos lecteurs; Vous pouvez utiliser un service externe : Disqus. <br/>
+Disqus s&#8217;intègre tres facilement avec octopress.
+En effet on a besoin que d&#8217;une ligne de paramétrage ! même moi  j&#8217;y suis arrivé :&ndash;)</p>
 
-<h2>octopress</h2>
+<p>-Tout d&#8217;abord il vous faut créer un compte chez  <a href="https://disqus.com">Disqus</a>.
+Notez bien le &lsquo;short name&rsquo; de votre compte, vous en aurez besoin dans votre config octopress.</p>
 
-<p>le mieux est de suivre  <a href="http://octopress.org/docs/setup/">le setup offciel</a> et en parallèle les explications ci-dessous:</p>
+<p>-modifiez votre <code>_config.yml</code> :  <br/>
+cherchez  <code>disqus_short_name</code> et ajoutez y votre short name comme ceci: <br/>
+<code>disqus_short_name: myShortName</code></p>
 
-<!--more-->
-
-
-<ul>
-<li>installer Git</li>
-<li>installer Ruby + le dev Kit (si vous êtes sous windows le plus simple est d&#8217;aller directement sur le site de <a href="http://rubyinstaller.org/downloads/">ruby</a> et d&#8217;y installer:  <br/>
-<code>Ruby 1.9.3-p545</code>  (la version 1.9.3 était alors recommandée)<br/>
-puis le devkit associé: <code>DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</code></li>
-</ul>
-
-
-<p>rajouter ensuite a votre Path les variables d&#8217;environnements  <code>...\Rubyxx\bin</code> , <code>...\RubyDevKit\bin</code> et  <code>...\RubyDevKit\mingw\bin</code> <br/>
- (pour ces 2 dernières vous pouvez utiliser <code>RubyDevKit/devkitvars.bat</code>)</p>
-
-<ul>
-<li>installer un blog octopress vide : <a href="http://octopress.org/docs/deploying/github/">(cf octopress)</a> <br/>
-Créez vous un repertoire local qui accueillera votre blog,
-et dans ce repertoire lancez :
-
-<blockquote><p>rake setup_github_pages</p></blockquote></li>
-</ul>
-
-
-<p>cette commande va vous checkouter un blog octopress vide et le faire mapper sur votre repo github</p>
-
-<blockquote><p>rake generate  <br/>
-rake deploy</p></blockquote>
-
-<p>vous permet de générer votre site; puis de le déployer sur github pour enfin obtenir ceci : <br/>
-<img src="\images\blogVide.png" alt="blog Vide" /></p>
+<p>Et pis c&#8217;est tout!</p>
 </div>
 
 
@@ -163,7 +135,7 @@ rake deploy</p></blockquote>
   
 
 
-<time datetime="2014-06-27T10:07:51+02:00" pubdate data-updated="true">27/06/14</time>
+<time datetime="2014-11-21T15:44:08+01:00" pubdate data-updated="true">21/11/14</time>
       
 
 <span class="categories">
@@ -177,7 +149,7 @@ rake deploy</p></blockquote>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress/" data-via="ybacquet" data-counturl="http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus/" data-via="ybacquet" data-counturl="http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus/" >Tweet</a>
   
   
   
@@ -186,8 +158,8 @@ rake deploy</p></blockquote>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2014/07/octopress-customisation/" title="Previous Post: Octopress customisation">&laquo; Octopress customisation</a>
       
-        <a class="basic-alignment right" href="/blog/2014/07/octopress-customisation/" title="Next Post: Octopress customisation">Octopress customisation &raquo;</a>
       
     </p>
   </footer>
@@ -245,8 +217,8 @@ rake deploy</p></blockquote>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress/';
-        var disqus_url = 'http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress/';
+        var disqus_identifier = 'http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus/';
+        var disqus_url = 'http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus/';
         var disqus_script = 'embed.js';
       
     (function () {

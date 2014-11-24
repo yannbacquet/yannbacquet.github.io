@@ -4,7 +4,7 @@
   <title><![CDATA[Java vous raconter ...]]></title>
   <link href="http://yannbacquet.github.io/atom.xml" rel="self"/>
   <link href="http://yannbacquet.github.io/"/>
-  <updated>2014-11-13T15:34:19+01:00</updated>
+  <updated>2014-11-24T14:08:23+01:00</updated>
   <id>http://yannbacquet.github.io/</id>
   <author>
     <name><![CDATA[Yann Bacquet]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ajout de commentaires avec Disqus]]></title>
+    <link href="http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus/"/>
+    <updated>2014-11-21T15:44:08+01:00</updated>
+    <id>http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus</id>
+    <content type="html"><![CDATA[<h2>disqus</h2>
+
+<p>Afin de permettre l&#8217;ajout de commentaires par vos lecteurs; Vous pouvez utiliser un service externe : Disqus. <br/>
+Disqus s&#8217;intègre tres facilement avec octopress.
+En effet on a besoin que d&#8217;une ligne de paramétrage ! même moi  j&#8217;y suis arrivé :&ndash;)</p>
+
+<p>-Tout d&#8217;abord il vous faut créer un compte chez  <a href="https://disqus.com">Disqus</a>.
+Notez bien le &lsquo;short name&rsquo; de votre compte, vous en aurez besoin dans votre config octopress.</p>
+
+<p>-modifiez votre <code>_config.yml</code> :  <br/>
+cherchez  <code>disqus_short_name</code> et ajoutez y votre short name comme ceci: <br/>
+<code>disqus_short_name: myShortName</code></p>
+
+<p>Et pis c&#8217;est tout!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress customisation]]></title>
