@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Categorie: octopress | Java vous raconter ...]]></title>
+  <link href="http://yannbacquet.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://yannbacquet.github.io/"/>
+  <updated>2016-08-17T13:55:02+02:00</updated>
+  <id>http://yannbacquet.github.io/</id>
+  <author>
+    <name><![CDATA[Yann Bacquet]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ajout de commentaires avec Disqus]]></title>
+    <link href="http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus/"/>
+    <updated>2014-11-21T15:44:08+01:00</updated>
+    <id>http://yannbacquet.github.io/blog/2014/11/ajout-de-commentaires-avec-disqus</id>
+    <content type="html"><![CDATA[<h2>disqus</h2>
+
+<p>Afin de permettre l'ajout de commentaires par vos lecteurs; Vous pouvez utiliser un service externe : Disqus. <br/>
+Disqus s'intègre tres facilement avec octopress.
+En effet on a besoin que d'une ligne de paramétrage ! même moi  j'y suis arrivé :-)</p>
+
+<p>-Tout d'abord il vous faut créer un compte chez  <a href="https://disqus.com">Disqus</a>.
+Notez bien le &lsquo;short name&rsquo; de votre compte, vous en aurez besoin dans votre config octopress.</p>
+
+<p>-modifiez votre <code>_config.yml</code> :  <br/>
+cherchez  <code>disqus_short_name</code> et ajoutez y votre short name comme ceci: <br/>
+<code>disqus_short_name: myShortName</code></p>
+
+<p>Et pis c'est tout!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress customisation]]></title>
+    <link href="http://yannbacquet.github.io/blog/2014/07/octopress-customisation/"/>
+    <updated>2014-07-02T12:52:27+02:00</updated>
+    <id>http://yannbacquet.github.io/blog/2014/07/octopress-customisation</id>
+    <content type="html"><![CDATA[<h2>Thèmes</h2>
+
+<p>Vous pouvez récupérer des <a href="http://octopressthemes.com">thèmes</a> déja tout fait pour remplacer celui par defaut  <br/>
+Il faudra alors copier le répertoire dans octopress\.themes</p>
+
+<h2>_config.yml</h2>
+
+<p><code>octopress\config.yml</code> est le point d'entré pour customiser votre blog: <br/>
+Vous pouvez commencer par changer <code>title:</code>  <code>subtitle:</code>  <code>author:</code>
+et eventuellement le format de date avec <code>date_format:</code></p>
+
+<!--more-->  
+
+
+<p>Pour franciser la &ldquo;Category&rdquo;, changez  <code>category_title_prefix:</code>. <br/>
+Passez <code>titlecase:</code> a false Si vous ne voulez pas de majuscule à chaque mots (pour vos titres).</p>
+
+<p>Pour une présentation avec résumés (affichage partiel de chaque post)
+il faudra ajouter dans vos posts <code>&lt;!--more--&gt;</code> <br/>
+et pour fanciser, modifier <code>excerpt_link:</code></p>
+
+<p>Pour customiser la partie droite de votre blog, modifiez
+<code>default_asides:</code> <br/>
+Par exemple vous pouvez vous rajouter une fenêtre &ldquo;About&rdquo; avec <br/>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>default_asides: [ custom/asides/about.html, &hellip;</span></code></pre></td></tr></table></div></figure>
+le about.html à customiser se trouvant sous    <code>octopress\source\_includes\custom\asides\about.html</code></p>
+
+<h2>page de présentation</h2>
+
+<p>je me créé une page about (ca pourrait être toto) <br/>
+<code>rake new_page[about]</code> =>  <code>source\about\index.markdown</code> <br/>
+Si vous voulez ensuite un onglet pointant dessus : <br/>
+allez dans <code>source\_includes\custom\navigation.htm</code> <br/>
+et ajouter :
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;li>&lt;a href="/about">A Propos&lt;/a>&lt;/li></span></code></pre></td></tr></table></div></figure></p>
+
+<h2>SEO (search engine optimisation)</h2>
+
+<p>voici d'abord un lien <a href="http://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_de_recherche">wikipedia SEO</a><br/>
+Même si les moteurs de recherche semblent s'apppuyer de moins en moins sur les &lsquo;meta tags&rsquo;; ca ne mange pas de paim de les rajouter.</p>
+
+<p>Pour la <em>Home page</em>: rajouter dans _config.yml les mots clés <code>keywords</code> et <code>description</code> <br/>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>description: #site description
+</span><span class='line'>keywords:    #key1,key2,key3</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Puis pour sa bonne prise en compte : Dans <code>source/_includes/head.html</code>
+apres la ligne <code>&lt;meta name="author" ...</code> changer le code pour description/Keywords
+avec:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>{% capture description %}{% if page.url == &ldquo;/index.html&rdquo; %} {{ site.description }}{% elsif page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+</span><span class='line'>  &lt;meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+</span><span class='line'>  {% if page.url == &ldquo;/index.html&rdquo; %}&lt;meta name="keywords" content="{{ site.keywords }}">
+</span><span class='line'>  {% elsif page.keywords %}&lt;meta name="keywords" content="{{ page.keywords }}">{% endif %}</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Installation d'octopress]]></title>
+    <link href="http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress/"/>
+    <updated>2014-06-27T10:07:51+02:00</updated>
+    <id>http://yannbacquet.github.io/blog/2014/06/mes-debuts-avec-octopress</id>
+    <content type="html"><![CDATA[<h2>github</h2>
+
+<p>Pour héberger un blog sur GitHub: <br/>
+il faut commencer par se créer un repo dédié avec comme nom , ben ton nom en fait ;)
+c'est expliqué <a href="https://pages.github.com/">la</a><br/>
+Si tu penses utiliser octopress, crée juste le repository (tache 1 uniquement)  <br/>
+Si tu n'es pas un expert github tu peux réviser un peu <a href="http://fr.openclassrooms.com/informatique/cours/gerez-vos-codes-source-avec-git">ici</a>. (tu n'auras besoin que des commandes de base)</p>
+
+<h2>octopress</h2>
+
+<p>le mieux est de suivre  <a href="http://octopress.org/docs/setup/">le setup offciel</a> et en parallèle les explications ci-dessous:</p>
+
+<!--more-->
+
+
+<ul>
+<li>installer Git</li>
+<li>installer Ruby + le dev Kit (si vous êtes sous windows le plus simple est d'aller directement sur le site de <a href="http://rubyinstaller.org/downloads/">ruby</a> et d'y installer:  <br/>
+<code>Ruby 1.9.3-p545</code>  (la version 1.9.3 était alors recommandée)<br/>
+puis le devkit associé: <code>DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</code></li>
+</ul>
+
+
+<p>rajouter ensuite a votre Path les variables d'environnements  <code>...\Rubyxx\bin</code> , <code>...\RubyDevKit\bin</code> et  <code>...\RubyDevKit\mingw\bin</code> <br/>
+ (pour ces 2 dernières vous pouvez utiliser <code>RubyDevKit/devkitvars.bat</code>)</p>
+
+<ul>
+<li>installer un blog octopress vide : <a href="http://octopress.org/docs/deploying/github/">(cf octopress)</a> <br/>
+Créez vous un repertoire local qui accueillera votre blog,
+et dans ce repertoire lancez :
+
+<blockquote><p>rake setup_github_pages</p></blockquote></li>
+</ul>
+
+
+<p>cette commande va vous checkouter un blog octopress vide et le faire mapper sur votre repo github</p>
+
+<blockquote><p>rake generate  <br/>
+rake deploy</p></blockquote>
+
+<p>vous permet de générer votre site; puis de le déployer sur github pour enfin obtenir ceci : <br/>
+<img src="\images\blogVide.png" alt="blog Vide" /></p>
+]]></content>
+  </entry>
+  
+</feed>
